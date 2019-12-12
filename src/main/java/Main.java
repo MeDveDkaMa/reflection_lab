@@ -10,7 +10,7 @@ public class Main {
         Information info = new Information();
         try {
             Class clazz = Class.forName(CLASSFORTEST);
-            System.out.println(info.getInfo(clazz));
+            info.getInfo(clazz);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

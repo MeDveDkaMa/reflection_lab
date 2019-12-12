@@ -4,13 +4,11 @@ import java.util.Collections;
 
 public class Information {
 
-    public String getInfo(Class clazz) {
-        String AllInfo = null;
+    public void getInfo(Class clazz) {
         getFields(clazz);
         getMethods(clazz);
         getInterfaces(clazz);
         getParent(clazz);
-        return AllInfo;
     }
 
     private void getFields(Class clazz) {
@@ -45,8 +43,8 @@ public class Information {
 
     private void getParent(Class clazz) {
         if (clazz.getSuperclass() != null) {
-            System.out.println("\nSuperclasses: \n" + "========================== \n" + clazz.getSuperclass().getName());
-            System.out.println("\n" + getInfo(clazz.getSuperclass()));
+            System.out.println("\nSuperclass: \n" + "========================== \n" + clazz.getSuperclass().getName());
+            getInfo(clazz.getSuperclass());
         }
     }
 }
