@@ -1,7 +1,7 @@
 public class TestClass {
     private int age;
     private int number;
-    private String FirstName;
+    private String FirstName = "Sasha";
     private String LastName;
 
     public int getAge() {
@@ -20,9 +20,9 @@ public class TestClass {
         this.number = number;
     }
 
-    public String getFirstName() {
-        return FirstName;
-    }
+//    public String getFirstName() {
+//        return FirstName;
+//    }
 
     public void setFirstName(String firstName) {
         FirstName = firstName;
@@ -35,4 +35,8 @@ public class TestClass {
     public void setLastName(String lastName) {
         LastName = lastName;
     }
+    private void printData(){
+        System.out.println(number + " " + FirstName);
+    }
+
 }
