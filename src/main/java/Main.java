@@ -1,6 +1,3 @@
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 public class Main {
 
     private static final String CLASSFORTEST = "java.lang.String";
