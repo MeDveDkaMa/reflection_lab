@@ -9,8 +9,8 @@ public class Information {
         printClass(clazz);
         getFields(clazz);
         getMethods(clazz);
-        getParent(clazz);
         getInterfaces(clazz);
+        getParent(clazz);
     }
 
     private void getFields(Class clazz) {
@@ -31,7 +31,7 @@ public class Information {
     private void getInterfaces(Class clazz) {
         Class[] field = clazz.getInterfaces();
         int cout = field.length;
-        sb.append("\nInterfaces of :" + printClass(clazz) + "\n==========================" + "\t ").append(cout).append("\n");
+        sb.append("\nInterfaces: " + printClass(clazz) + "\n==========================" + "\t ").append(cout).append("\n");
         for (int i = 0; i < field.length; i++) {
             sb.append(field[i]).append("\n");
         }
@@ -40,7 +40,7 @@ public class Information {
     private void getMethods(Class clazz) {
         Method[] methods = clazz.getDeclaredMethods();
         int cout = methods.length;
-        sb.append("\nMethods:" + printClass(clazz) + "\n==========================" + "\t ").append(cout).append("\n");
+        sb.append("\nMethods: " + printClass(clazz) + "\n==========================" + "\t ").append(cout).append("\n");
         for (int i = 0; i < methods.length; i++) {
             sb.append(methods[i]).append("\n");
         }
@@ -48,7 +48,7 @@ public class Information {
 
     private void getParent(Class clazz) {
         if (clazz.getSuperclass() != null) {
-            sb.append("\nSuperclass: " + printClass(clazz) + "\n==========================\n" + "\t" + clazz.getSuperclass().getName()).append("\n");
+            sb.append("\nSuperclass: " + printClass(clazz) + "\n==========================\n" + clazz.getSuperclass().getName()).append("\n");
             getInfo(clazz.getSuperclass());
         }
     }
