@@ -4,6 +4,8 @@ import java.util.Collections;
 
 public class Information {
 
+    public static StringBuilder sb = new StringBuilder();
+
     public void getInfo(Class clazz) {
         getFields(clazz);
         getMethods(clazz);
@@ -15,9 +17,9 @@ public class Information {
         String Fields = null;
         Field[] field = clazz.getDeclaredFields();
         int cout = field.length;
-        System.out.println("\nFields: \n" + "==========================" + "\t " + cout);
+        sb.append("\nFields: \n" + "==========================" + "\t ").append(cout).append("\n");
         for (int i = 0; i < field.length; i++) {
-            System.out.println(field[i]);
+         sb.append(field[i]).append("\n");
         }
     }
 
@@ -25,9 +27,9 @@ public class Information {
         String Fields = null;
         Class[] field = clazz.getInterfaces();
         int cout = field.length;
-        System.out.println("\nInterfaces: \n" + "==========================" + "\t " + cout);
+        sb.append("\nInterfaces: \n" + "==========================" + "\t ").append(cout).append("\n");
         for (int i = 0; i < field.length; i++) {
-            System.out.println(field[i]);
+            sb.append(field[i]).append("\n");
         }
     }
 
@@ -35,15 +37,15 @@ public class Information {
         String Methods = null;
         Method[] methods = clazz.getDeclaredMethods();
         int cout = methods.length;
-        System.out.println("\nMethods: \n" + "==========================" + "\t" + cout);
+        sb.append("\nMethods: \n" + "==========================" + "\t").append(cout).append("\n");
         for (int i = 0; i < methods.length; i++) {
-            System.out.println(methods[i]);
+            sb.append(methods[i]).append("\n");
         }
     }
 
     private void getParent(Class clazz) {
         if (clazz.getSuperclass() != null) {
-            System.out.println("\nSuperclass: \n" + "========================== \n" + clazz.getSuperclass().getName());
+            sb.append("\nSuperclass: \n" + "========================== \n" + clazz.getSuperclass().getName());
             getInfo(clazz.getSuperclass());
         }
     }
