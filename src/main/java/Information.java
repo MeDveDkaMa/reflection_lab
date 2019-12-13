@@ -45,7 +45,7 @@ public class Information {
 
     private void getParent(Class clazz) {
         if (clazz.getSuperclass() != null) {
-            sb.append("\nSuperclass: \n" + "========================== \n" + clazz.getSuperclass().getName());
+            sb.append("\nSuperclass: \n" + "========================== \n" + clazz.getSuperclass().getName()).append("\n");
             getInfo(clazz.getSuperclass());
         }
     }
