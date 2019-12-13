@@ -8,7 +8,7 @@ public class Main {
         try {
             Class clazz = Class.forName(CLASSFORTEST);
             info.getInfo(clazz);
-            System.out.println(Information.sb);
+            info.printClass();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
